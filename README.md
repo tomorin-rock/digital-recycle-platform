@@ -139,8 +139,3 @@ mvn clean package
 ```
 
 构建产物将生成在 `backend/target` 目录。
-
-## 项目结构
-
-### 前端结构
-

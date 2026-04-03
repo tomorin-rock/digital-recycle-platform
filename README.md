@@ -6,8 +6,8 @@
 
 ## 系统展示
 
-![登录](https://github.com/tomorin-rock/digital-recycle-platform/edit/main/login.png)
-![商品](https://github.com/tomorin-rock/digital-recycle-platform/edit/main/products.png)
+![登录](https://github.com/tomorin-rock/digital-recycle-platform/blob/main/login.png)
+![商品](https://github.com/tomorin-rock/digital-recycle-platform/blob/main/products.png)
 
 ## 技术栈
 

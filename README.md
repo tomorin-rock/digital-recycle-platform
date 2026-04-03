@@ -39,7 +39,7 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/yourusername/digital-recycle-platform.git
+git clone https://github.com/tomorin-rock/digital-recycle-platform.git
 cd digital-recycle-platform
 ```
 

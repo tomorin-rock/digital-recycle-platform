@@ -6,8 +6,8 @@
 
 ## 系统展示
 
-![登录](.\login.png)
-![商品](.\products.png)
+![登录](login.png)
+![商品](products.png)
 
 ## 技术栈
 

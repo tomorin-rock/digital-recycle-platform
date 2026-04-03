@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.CategoryMapper">
+    <insert id="insert">
+        insert into productCategory(name, parentId)
+        values (#{name}, #{parentId})
+    </insert>
+    <update id="update" parameterType="com.demo.entity.ProductCategory" useGeneratedKeys="true" keyProperty="id">
+        update productCategory
+        set name=#{name},
+            parentId = #{parentId},
+            status = #{status}
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="java.lang.Long">
+        delete from productCategory
+        where id = #{id}
+    </delete>
+    <select id="selectAll" resultType="com.demo.entity.ProductCategory">
+        select * from productCategory
+    </select>
+    <select id="selectAllUser" resultType="com.demo.entity.ProductCategory">
+        select *
+        from productCategory
+        where parentId = #{parentId}
+          and status = 1
+        order by sort, id
+    </select>
+    <select id="categoryList" resultType="com.demo.entity.ProductCategory">
+        select *
+        from productCategory
+        where status = 1
+        order by sort, id
+    </select>
+</mapper>

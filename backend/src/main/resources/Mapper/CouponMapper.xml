@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.CouponMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO coupon(userId, code, sourceRecycleId, amount, expireTime)
+        VALUES (#{userId}, #{code}, #{sourceRecycleId}, #{amount}, #{expireTime})
+    </insert>
+    <update id="useCoupon">
+        UPDATE coupon
+        SET status          = 'USED',
+            sourceRecycleId = #{sourceRecycleId},
+            useTime         = NOW()
+        WHERE id = #{id}
+    </update>
+    <update id="restoreCoupon">
+        UPDATE coupon
+        SET status = 'UNUSED'
+        WHERE id = #{couponId}
+    </update>
+    <select id="selectByUserId" resultType="com.demo.entity.Coupon">
+        SELECT *
+        FROM coupon
+        WHERE userId = #{userId}
+        ORDER BY createTime DESC
+    </select>
+    <select id="selectById" resultType="com.demo.entity.Coupon">
+        SELECT *
+        FROM coupon
+        WHERE id = #{id}
+    </select>
+</mapper>

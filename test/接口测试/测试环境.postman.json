@@ -1,0 +1,30 @@
+{
+    "name": "测试环境",
+    "values": [
+        {
+            "key": "baseUrl",
+            "value": "http://test-cn.your-api-server.com",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "token",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "userId",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "price",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+}

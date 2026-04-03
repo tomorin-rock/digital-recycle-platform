@@ -1,0 +1,3371 @@
+{
+    "info": {
+        "name": "系统",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "注册登录",
+            "description": "",
+            "item": [
+                {
+                    "name": "注册",
+                    "description": "",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {},
+                    "request": {
+                        "auth": {},
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"username\":\"wild\",\r\n    \"password\":\"Wild@123\",\r\n    \"confirmPwd\":\"Wild@123\",\r\n    \"nickname\":\"漂泊\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:1000/api/auth/register",
+                            "path": [
+                                "api",
+                                "auth",
+                                "register"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "protocol": "http",
+                            "port": "1000",
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "用户名已存在",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/register",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "register"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"wild\",\r\n    \"password\":\"Wild@123\",\r\n    \"confirmPwd\":\"Wild@123\",\r\n    \"nickname\":\"漂泊\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        },
+                        {
+                            "name": "密码和确认密码不一致",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/register",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "register"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"jack\",\r\n    \"password\":\"Jack@123\",\r\n    \"confirmPwd\":\"Jack@111\",\r\n    \"nickname\":\"杰克\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        },
+                        {
+                            "name": "用户名为空",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/register",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "register"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"Wild@123\",\r\n    \"confirmPwd\":\"Wild@123\",\r\n    \"nickname\":\"漂泊\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        },
+                        {
+                            "name": "密码格式不对",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/register",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "register"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"snk\",\r\n    \"password\":\"snk@123\",\r\n    \"confirmPwd\":\"snk@123\",\r\n    \"nickname\":\"漂泊\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        }
+                    ],
+                    "protocolProfileBehavior": {
+                        "strictSSL": false,
+                        "followRedirects": true
+                    }
+                },
+                {
+                    "name": "登录",
+                    "description": "",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {},
+                    "request": {
+                        "auth": {},
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"Admin@111\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:1000/api/auth/login",
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "protocol": "http",
+                            "port": "1000",
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "用户登录",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/login",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "login"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"wild\",\r\n    \"password\":\"Wild@123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        },
+                        {
+                            "name": "管理员登录",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/auth/login",
+                                    "path": [
+                                        "api",
+                                        "auth",
+                                        "login"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"Admin@123\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "cookie": []
+                        }
+                    ],
+                    "protocolProfileBehavior": {
+                        "strictSSL": false,
+                        "followRedirects": true
+                    }
+                },
+                {
+                    "name": "退出",
+                    "description": "",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {},
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "body": {},
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:1000/api/auth/logout",
+                            "path": [
+                                "api",
+                                "auth",
+                                "logout"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "protocol": "http",
+                            "port": "1000",
+                            "query": [],
+                            "variable": []
+                        }
+                    },
+                    "response": [],
+                    "protocolProfileBehavior": {
+                        "strictSSL": false,
+                        "followRedirects": true
+                    }
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "auth": {}
+        },
+        {
+            "name": "用户",
+            "description": "",
+            "item": [
+                {
+                    "name": "地址",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "添加地址",
+                            "description": "",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"receiverName\": \"扣克\",\r\n    \"receiverPhone\": \"17878712341\",\r\n    \"province\": \"广东省\",\r\n    \"city\": \"深圳市\",\r\n    \"district\": \"南山区\",\r\n    \"detail\": \"网易大厦D区1号楼216\" \r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/addresses",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "addresses"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "查看地址",
+                            "description": "",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/addresses",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "addresses"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "修改地址信息",
+                            "description": "",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "PUT",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"id\": 17,\r\n    \"receiverName\": \"倪哥\",\r\n    \"receiverPhone\": \"12311112222\",\r\n    \"province\": \"江西省\",\r\n    \"city\": \"吉安市\",\r\n    \"district\": \"吉安县\",\r\n    \"detail\": \"网易大厦\" \r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/addresses/:id",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "addresses",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "17",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "删除地址",
+                            "description": "",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "DELETE",
+                                "body": {},
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/addresses/:id",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "addresses",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "20",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "商品",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "根据名称查找",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "GET",
+                                "body": {},
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/products",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "products"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "modelName",
+                                            "value": "Galaxy",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "根据分类查询",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/products/parent/:parentId",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "products",
+                                        "parent",
+                                        ":parentId"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "categoryId",
+                                            "value": "21",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "parentId",
+                                            "value": "17",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "根据品牌搜索",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/products/brand/:brandId",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "products",
+                                        "brand",
+                                        ":brandId"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "brandId",
+                                            "value": "1",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "看商品详情",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/products/:id",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "products",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "4",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "回收",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "估价",
+                            "description": "",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"productId\" : 7,\r\n    \"grade\" : \"B\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/recycles/estimate",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "recycles",
+                                        "estimate"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "创建回收订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n  \"productId\": 7,\r\n  \"addressId\": 8,\r\n  \"grade\": \"B\",\r\n  \"appearanceDesc\": \"屏幕有轻微划痕，机身轻微使用痕迹\",\r\n  \"functionDesc\": \"所有功能正常，电池健康度80%\",\r\n  \"estimatePrice\": {{price}}\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/recycles",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "recycles"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "查看回收订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/recycles",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "recycles"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "确认回收订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/recycles/confirm/:id",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "recycles",
+                                        "confirm",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "payType",
+                                            "value": "COUPON",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "17",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "取消订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/recycles/cancel/:id",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "recycles",
+                                        "cancel",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "19",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "优惠券",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "查看优惠券",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/coupons",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "coupons"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "换新",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "创建换新订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"recycleId\" : 17,\r\n    \"couponId\" : 14,\r\n    \"newProductId\" : 11,\r\n    \"addressId\" : 8\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/exchange",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "exchange"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "查看换新订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/exchange",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "exchange"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "支付订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/exchange/pay",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "exchange",
+                                        "pay"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "orderNo",
+                                            "value": "E2023605681194500096",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "取消订单",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/exchange/cancel",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "exchange",
+                                        "cancel"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "orderNo",
+                                            "value": "E2023415596863950848",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "确认收货",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/exchange/confirm",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "exchange",
+                                        "confirm"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [
+                                        {
+                                            "key": "orderNo",
+                                            "value": "E2023605681194500096",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "论坛",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "文章",
+                            "description": "",
+                            "item": [
+                                {
+                                    "name": "发布文章",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n    \"userId\": {{userId}},\r\n    \"title\": \"傻逼\",\r\n    \"content\": \"放你妈的屁，我操你妈，fuck\"\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "看全部文章",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "查看文章内容",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts/:id",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "7",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "删除文章",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "DELETE",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts/:id",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "1",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "点赞",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts/:id/like",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts",
+                                                ":id",
+                                                "like"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "7",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "取消点赞",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/posts/:id/dislike",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "posts",
+                                                ":id",
+                                                "dislike"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "6",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                },
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {}
+                        },
+                        {
+                            "name": "评论",
+                            "description": "",
+                            "item": [
+                                {
+                                    "name": "查看文章评论",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/comments/:postId",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "comments",
+                                                ":postId"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "postId",
+                                                    "value": "7",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "回复文章/评论",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n    \"postId\": 7,\r\n    \"parentId\":2,\r\n    \"content\": \"我觉得你很对\"\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/comments",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "comments"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "点赞评论",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/comments/:id/like",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "comments",
+                                                ":id",
+                                                "like"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "2",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "取消点赞",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/comments/:id/dislike",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "comments",
+                                                ":id",
+                                                "dislike"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "2",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "删除评论",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/user/comments/:id",
+                                            "path": [
+                                                "api",
+                                                "user",
+                                                "comments",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "2",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                },
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {}
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                },
+                {
+                    "name": "用户信息",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "查看用户信息",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/me",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "me"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "修改密码",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"oldPwd\" : \"Wild@123\",\r\n    \"newPwd\" : \"Wild@111\",\r\n    \"confirmPwd\" : \"Wild@111\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/me/password",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "me",
+                                        "password"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "更改用户信息",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"nickname\":\"大只\",\r\n    \"amount\":12\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/me",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "me"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "注销",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/me",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "me"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "上传头像",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "file",
+                                            "value": "file://D:\\桌面\\tou.jpg",
+                                            "type": "file",
+                                            "disabled": false
+                                        }
+                                    ]
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/user/me/avatar",
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "me",
+                                        "avatar"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "auth": {}
+        },
+        {
+            "name": "管理员",
+            "description": "",
+            "item": [
+                {
+                    "name": "订单",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "开始质检",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/admin/recycles/startInspection/:id",
+                                    "path": [
+                                        "api",
+                                        "admin",
+                                        "recycles",
+                                        "startInspection",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "17",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "结束质检",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"finalPrice\": \"2000\",\r\n    \"remark\": \"检测结果：机身完整，电池健康度为85%\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/admin/recycles/finishInspection/:id",
+                                    "path": [
+                                        "api",
+                                        "admin",
+                                        "recycles",
+                                        "finishInspection",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "17",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "发货",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:1000/api/admin/exchanges/shipping/:id",
+                                    "path": [
+                                        "api",
+                                        "admin",
+                                        "exchanges",
+                                        "shipping",
+                                        ":id"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "1000",
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "7",
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {
+                        "type": "bearer",
+                        "bearer": []
+                    }
+                },
+                {
+                    "name": "商品管理",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "商品",
+                            "description": "",
+                            "item": [
+                                {
+                                    "name": "添加商品",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n  \"categoryId\": 1,\r\n  \"brandId\": 1,\r\n  \"modelName\": \"iPhone 15 128G\",\r\n  \"description\": \"苹果最新款智能手机，128GB存储空间\",\r\n  \"imgUrl\": \"https://example.com/images/iphone15.jpg\",\r\n  \"isNew\": 1,\r\n  \"marketPrice\": 5999.00,\r\n  \"recycleBasePrice\": 3500.00,\r\n  \"stock\": 100,\r\n  \"status\": 1\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/products",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "products"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "获取商品列表 Copy",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/products",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "products"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [
+                                                {
+                                                    "key": "modelName",
+                                                    "value": "压力",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "上传商品图片",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "file",
+                                                    "value": "file://D:\\桌面\\tou.jpg",
+                                                    "type": "file",
+                                                    "disabled": false
+                                                }
+                                            ]
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/products/:id/image",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "products",
+                                                ":id",
+                                                "image"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "6",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "上下架",
+                                    "description": "",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "exec": [],
+                                                "type": "text/javascript",
+                                                "packages": {}
+                                            }
+                                        }
+                                    ],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/products/status/:id",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "products",
+                                                "status",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [
+                                                {
+                                                    "key": "status",
+                                                    "value": "0",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "121",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "修改商品",
+                                    "description": "",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "exec": [],
+                                                "type": "text/javascript",
+                                                "packages": {}
+                                            }
+                                        }
+                                    ],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n  \"id\": 121,\r\n  \"categoryId\": 1,\r\n  \"brandId\": 1,\r\n  \"modelName\": \"修改后的商品型号名称\",\r\n  \"description\": \"修改后的商品描述\",\r\n  \"isNew\": 1,\r\n  \"marketPrice\": 6999,\r\n  \"recycleBasePrice\": 4000,\r\n  \"stock\": 40,\r\n  \"status\": 1\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/products/:id",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "products",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "121",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                },
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {}
+                        },
+                        {
+                            "name": "品牌",
+                            "description": "",
+                            "item": [
+                                {
+                                    "name": "查询品牌",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/brands",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "brands"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "上传品牌logo",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "formdata",
+                                            "formdata": [
+                                                {
+                                                    "key": "file",
+                                                    "value": "file://D:\\桌面\\tou.jpg",
+                                                    "type": "file",
+                                                    "disabled": false
+                                                }
+                                            ]
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/brands/:id/logo",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "brands",
+                                                ":id",
+                                                "logo"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "2",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "修改品牌",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n    \"id\":1,\r\n    \"name\":\"HUAWEI\"\r\n\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/brands/:id",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "brands",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "1",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "删除品牌",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "DELETE",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/brands/:id",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "brands",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "17",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "添加品牌",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n  \"name\": \"品牌名称\",\r\n  \"status\": 1,\r\n  \"sort\": 1\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/brands",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "brands"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                },
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {}
+                        },
+                        {
+                            "name": "分类",
+                            "description": "",
+                            "item": [
+                                {
+                                    "name": "查询分类",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "GET",
+                                        "body": {},
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/categories",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "categories"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "添加分类",
+                                    "description": "",
+                                    "event": [],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "POST",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n  \"name\": \"智能手表\",\r\n  \"parentId\": null,\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/categories",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "categories"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": []
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                },
+                                {
+                                    "name": "修改分类",
+                                    "description": "",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "exec": [],
+                                                "type": "text/javascript",
+                                                "packages": {}
+                                            }
+                                        }
+                                    ],
+                                    "auth": {},
+                                    "request": {
+                                        "auth": {
+                                            "type": "bearer",
+                                            "bearer": [
+                                                {
+                                                    "key": "token",
+                                                    "value": "{{token}}",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "method": "PUT",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\r\n  \"id\": 33,\r\n  \"name\": \"智能穿戴\",\r\n  \"parentId\": null,\r\n  \"status\": 1,\r\n  \"sort\": 3\r\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        },
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:1000/api/admin/categories/:id",
+                                            "path": [
+                                                "api",
+                                                "admin",
+                                                "categories",
+                                                ":id"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "1000",
+                                            "query": [],
+                                            "variable": [
+                                                {
+                                                    "key": "id",
+                                                    "value": "33",
+                                                    "description": "",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "response": [],
+                                    "protocolProfileBehavior": {
+                                        "strictSSL": false,
+                                        "followRedirects": true
+                                    }
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                },
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [],
+                                        "type": "text/javascript",
+                                        "packages": {}
+                                    }
+                                }
+                            ],
+                            "auth": {}
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "auth": {}
+        }
+    ],
+    "variable": [],
+    "event": [],
+    "auth": {}
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.AddressMapper">
+    <insert id="addAddress">
+        insert into useraddress(userId, receiverName, receiverPhone, province, city, district, detail)
+        values (#{userId}, #{receiverName}, #{receiverPhone}, #{province}, #{city}, #{district}, #{detail})
+    </insert>
+    <update id="updateAddress">
+        update useraddress
+        set receiverName  = #{receiverName},
+            receiverPhone = #{receiverPhone},
+            province = #{province},
+            city = #{city},
+            district = #{district},
+            detail = #{detail}
+        where id = #{id}
+    </update>
+    <update id="setDefault">
+        update useraddress
+        set isDefault =
+                IF(id = #{id}, 1, 0)
+        where userId = #{userId}
+    </update>
+    <delete id="deleteAddress">
+        delete
+        from useraddress
+        where id = #{id}
+    </delete>
+
+    <select id="getDefaultAddress" resultType="com.demo.entity.UserAddress">
+        select *
+        from useraddress
+        where userId = #{userid}
+          and isDefault = 1
+        limit 1
+    </select>
+
+    <select id="getAddress" resultType="com.demo.entity.UserAddress">
+        select *
+        from useraddress
+        where userId = #{userid}
+    </select>
+
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.PostMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO forumpost (userId, title, content, createTime, updateTime)
+        VALUES (#{userId}, #{title}, #{content}, NOW(), NOW())
+    </insert>
+    <delete id="delete">
+        delete
+        from forumpost
+        where id = #{id}
+    </delete>
+    <update id="incrementViewCount">
+        update forumpost
+        set viewCount = viewCount + 1
+        where id = #{id}
+    </update>
+    <update id="incrementLikeCount">
+        update forumpost
+        set likeCount = likeCount + 1
+        where id = #{id}
+          and status = 1
+    </update>
+    <update id="decrementLikeCount">
+        update forumpost
+        set likeCount = IF(likeCount > 0, likeCount - 1, 0)
+        where id = #{id}
+    </update>
+    <update id="incrementReplyCount">
+        update forumpost
+        set replyCount = replyCount + 1
+        where id = #{id}
+    </update>
+    <update id="decrementReplyCount">
+        update forumpost
+        set replyCount = IF(replyCount > 0, replyCount - 1, 0)
+        where id = #{id}
+    </update>
+    <select id="selectAll" resultType="com.demo.entity.ForumPost">
+        select *
+        from forumpost
+        <where>
+            <if test="title != null and title != ''">
+                title like concat('%',#{title},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultType="com.demo.entity.ForumPost">
+        SELECT *
+        FROM forumpost
+        WHERE id = #{id}
+          AND status = 1
+    </select>
+    <select id="selectAllUser" resultType="com.demo.entity.ForumPost">
+        select *
+        from forumpost
+        <where>
+            status = 1
+            <if test="title != null and title != ''">
+                and title like concat('%',#{title},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

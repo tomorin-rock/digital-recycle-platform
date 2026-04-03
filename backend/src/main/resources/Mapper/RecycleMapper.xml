@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.RecycleMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into recycleOrder(orderNo, userId, productId, addressId, productSnapshot,
+                                  grade, appearanceDesc, functionDesc, estimatePrice, finalPrice, status,
+                                  payType)
+        values(#{orderNo}, #{userId}, #{productId}, #{addressId}, #{productSnapshot}, #{grade},
+               #{appearanceDesc}, #{functionDesc}, #{estimatePrice}, #{finalPrice}, #{status},
+               #{payType})
+    </insert>
+    <update id="cancelOrder">
+        update recycleOrder
+        set status = 'CANCELLED'
+        where id = #{id}
+    </update>
+    <update id="updateById">
+        update recycleOrder
+        set status      = #{status},
+            finalPrice = #{finalPrice},
+            remark      = #{remark},
+            payType = #{payType},
+            updateTime = now()
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="java.lang.Long">
+        delete from recycleOrder
+        where id = #{id}
+    </delete>
+    <!-- 管理员查看所有订单 -->
+    <select id="selectAll" resultType="com.demo.entity.RecycleOrder">
+        select *
+        from recycleOrder
+        order by createTime desc
+    </select>
+    <!-- 用户查看自己的订单 -->
+    <select id="selectByUserId" resultType="com.demo.entity.RecycleOrder">
+        select *
+        from recycleOrder
+        where userId = #{userId}
+        order by createTime desc
+    </select>
+    <select id="selectById" resultType="com.demo.entity.RecycleOrder">
+        select *
+        from recycleOrder
+        where id = #{id}
+    </select>
+    <select id="getCount" resultType="java.lang.Long">
+        select count(*)
+        from recycleOrder
+    </select>
+</mapper>

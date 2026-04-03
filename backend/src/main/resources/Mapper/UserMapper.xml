@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.UserMapper">
+
+<!-- 添加用户,注册操作 -->
+    <insert id="insert" parameterType="com.demo.entity.SysUser" useGeneratedKeys="true" keyProperty="id">
+        insert into sysuser (username, password, nickname)
+        values (#{username},#{password},#{nickname})
+    </insert>
+
+    <update id="addBalance">
+        update sysuser
+        set balance = balance + #{amount}
+        where id = #{id}
+    </update>
+    <!--  更新  -->
+    <update id="update" parameterType="com.demo.entity.SysUser">
+        update sysuser
+        set nickname = #{nickname},
+            balance = balance + #{amount}
+        where id = #{id}
+    </update>
+    <update id="updateStatus">
+        update sysuser
+        set status = #{status}
+        where id = #{id}
+    </update>
+    <update id="updatePassword">
+        update sysuser
+        set password = #{password}
+        where id = #{id}
+    </update>
+    <!-- 注销  -->
+    <update id="cancel">
+        update sysuser
+        set username = null,
+            password = null,
+            nickname = null,
+            avatar = null,
+            balance = 0
+        where id = #{id}
+    </update>
+    <update id="reduceBalance">
+        update sysuser
+        set balance = balance - #{amount}
+        where id = #{id}
+          and balance >= #{amount}
+    </update>
+    <update id="updateAvatar">
+        update sysuser
+        set avatar = #{avatar}
+        where id = #{id}
+    </update>
+    <select id="selectAll" resultType="com.demo.entity.SysUser">
+        select *
+        from sysuser
+        <where>
+            <if test="nickname != null and nickname != ''">
+                and nickname like concat('%',#{nickname},'%')
+            </if>
+            and role = 'user'
+        </where>
+
+    </select>
+    <select id="selectByLoginId" resultType="com.demo.entity.SysUser">
+        select *
+        from sysuser
+        where (username = #{loginId})
+    </select>
+    <select id="selectById" resultType="com.demo.entity.SysUser">
+        select *
+        from sysuser
+        where id = #{id}
+    </select>
+    <select id="getCount" resultType="long">
+        select count(*)
+        from sysuser
+        where role = 'user'
+    </select>
+
+</mapper>

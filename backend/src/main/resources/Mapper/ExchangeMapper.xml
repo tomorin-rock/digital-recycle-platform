@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.ExchangeMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into exchangeOrder(orderNo, userId, recycleId, couponId, newProductId, addressId,
+                                    productPrice, discountAmount, payAmount, status)
+        values(#{orderNo}, #{userId}, #{recycleId}, #{couponId}, #{newProductId}, #{addressId},
+               #{productPrice}, #{discountAmount}, #{payAmount}, #{status})
+    </insert>
+    <update id="updateStatus">
+        update exchangeOrder
+        set status = #{status}
+        where orderNo = #{orderNo}
+    </update>
+    <delete id="delete" parameterType="java.lang.Long">
+        delete from exchangeOrder
+        where id = #{id}
+    </delete>
+    <!--  管理员查看所有订单  -->
+    <select id="selectAll" resultType="com.demo.entity.ExchangeOrder">
+        select *
+        from exchangeOrder
+        order by createTime desc
+    </select>
+    <!-- 用户查看自己的订单 -->
+    <select id="selectByUserId" resultType="com.demo.entity.ExchangeOrder">
+        select *
+        from exchangeOrder
+        where userId = #{userId}
+        order by createTime desc
+    </select>
+    <select id="selectByOrderNo" resultType="com.demo.entity.ExchangeOrder">
+        select *
+        from exchangeOrder
+        where orderNo = #{orderNo}
+    </select>
+    <select id="selectById" resultType="com.demo.entity.ExchangeOrder">
+        select *
+        from exchangeOrder
+        where id = #{id}
+    </select>
+    <select id="getCount" resultType="java.lang.Long" >
+        select count(*)
+        from exchangeOrder
+    </select>
+</mapper>
